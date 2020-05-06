@@ -1,0 +1,13 @@
+@import "./../bootstrap/bootstrap";
+@import "~normalize.css";
+@import "font";
+@import 'base/variables';
+
+* {
+  font-family: 'Museo Sans Cyrl', sans-serif;
+}
+.container {
+  max-width: 950px;
+  margin: 0 auto;
+}
+
