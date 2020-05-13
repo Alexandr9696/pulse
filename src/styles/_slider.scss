@@ -1,0 +1,122 @@
+@import "slick.css";
+
+
+/* Слайдер */
+.slick-slider{}
+
+/* Слайдер запущен */
+.slick-slider.slick-initialized{}
+
+/* Слайдер с точками */
+.slick-slider.slick-dotted{}
+
+/* Ограничивающая оболочка */
+.slick-list {
+  overflow: hidden;
+}
+
+/* Лента слайдов */
+.slick-track{
+  display: flex;
+  //align-items: flex-start;
+}
+
+/* Слайд */
+.slick-slide{}
+
+/* Слайд активный (показывается) */
+.slick-slide.slick-active{}
+
+/* Слайд основной */
+.slick-slide.slick-current{}
+
+/* Слайд по центру */
+.slick-slide.slick-center{}
+
+/* Клонированный слайд */
+.slick-slide.slick-cloned{}
+
+/* Стрелка */
+.slick-arrow{}
+
+/* Стрелка влево */
+.slick-arrow.slick-prev{}
+
+/* Стрелка вправо */
+.slick-arrow.slick-next{}
+
+/* Стрелка не активная */
+.slick-arrow.slick-disabled{}
+
+/* Точки (булиты) */
+.slick-dots{}
+.slick-dots li{}
+
+/* Активная точка */
+.slick-dots li.slick-active{}
+
+/* Элемент точки */
+.slick-dots li button{}
+
+
+
+.slider {
+  padding: 81px 0;
+
+  .slider__inner {
+    width: 750px;
+    margin: 0 auto;
+    position: relative;
+
+    .slick-arrow{
+      position: absolute;
+      top: 50%;
+      z-index: 10;
+      font-size: 0; // для того чтобы убрать стрелки
+      width: 31px;
+      height: 50px;
+      transform: translateY(-30px);
+      border: none;
+    }
+
+    .slick-arrow.slick-prev{
+      left: -66px;
+      background: url("./../assets/icons/left.svg") center center/cover no-repeat;
+    }
+
+    .slick-arrow.slick-next{
+      right: -66px;
+      background: url("./../assets/icons/right.svg") center center/cover no-repeat;
+    }
+
+    .slider__item {
+      text-align: center;
+    }
+
+    .slick-dots {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      li {
+        list-style: none;
+        margin: 0 10px;
+        button {
+          outline: none;
+          padding: 0;
+          font-size: 0;
+          width: 15px;
+          height: 15px;
+          background-color: #4b4b4b;
+          border-radius: 50%;
+          border: none;
+        }
+      }
+      li.slick-active button {
+        background: transparent;
+        border: 1px solid #4b4b4b;
+      }
+    }
+  }
+}
+
+

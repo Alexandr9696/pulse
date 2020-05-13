@@ -1,8 +1,8 @@
 const path = require('path'); // встроенный модуль webpack
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin'); // плагин копирования
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
@@ -26,13 +26,13 @@ const optimization = () => {
     if (isProd) {
         config.minimizer = [
             new OptimizeCssAssetsPlugin({
-            assetNameRegExp: /\.css$/g,
-            cssProcessor: require('cssnano'),
-            cssProcessorPluginOptions: {
-                preset: ['default', { discardComments: { removeAll: true } }],
-            },
-            canPrint: true
-        }),
+                assetNameRegExp: /\.css$/g,
+                cssProcessor: require('cssnano'),
+                cssProcessorPluginOptions: {
+                    preset: ['default', {discardComments: {removeAll: true}}],
+                },
+                canPrint: true
+            }),
             new TerserWebpackPlugin()
         ]
     }
@@ -109,9 +109,11 @@ module.exports = {
         new CopyWebpackPlugin([
             {
                 from: path.resolve(__dirname, 'src/favicon.ico'),
-                to: path.resolve(__dirname, 'dist')
+                to: path.resolve(__dirname, 'dist'),
+                force: true,
             }
-        ]),
+        ]
+),
         // создание css файла в dist
         new MiniCssExtractPlugin({
             filename: filename('css')
@@ -122,9 +124,9 @@ module.exports = {
             jQuery: 'jquery',
             'window.jQuery': 'jquery'
         }),
-        new FaviconsWebpackPlugin({
-            logo: 'favicon.ico'
-        })
+        // new FaviconsWebpackPlugin({
+        //     logo: 'favicon.ico'
+        // })
     ],
     module: {
         rules: [
@@ -151,7 +153,7 @@ module.exports = {
             },
             // работа с изображениями
             {
-                test: /\.(png|jpg|svg|gif)$/,
+                test: /\.(png|jpg|svg|gif|ico)$/,
                 use: [
                     {
                         loader: 'file-loader',
@@ -190,7 +192,13 @@ module.exports = {
             // работа с шрифтами
             {
                 test: /\.(ttf|woff|woff2|eot)$/,
-                use: ["file-loader"]
+                use: [{
+                    loader: "file-loader",
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: "font",
+                        useRelativePath: true}
+                }]
             },
             // работы с xml файлами
             {
