@@ -1,4 +1,3 @@
-// import Post from "@modules/Post";
 import './favicon.ico';
 import '@fortawesome/fontawesome-free/js/all'
 import './styles/scss.scss';
@@ -9,7 +8,6 @@ import './modules/slick.min';
 import './modules/slider';
 import './modules/catalog';
 import './modules/modal/modal_index';
-// import './modules/modal';
 import './modules/validate';
 
 

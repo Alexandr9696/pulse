@@ -1,6 +1,6 @@
 .promo {
     min-height: 650px;
-    padding: 21px 0 93px 0;
+    padding-top: 21px;
     background: url("./../assets/img/main.jpg") center center/cover no-repeat;
     &__wrapper {
         display: flex;
@@ -32,7 +32,7 @@
     }
 
     &__icon {
-        width: 108px;
+        width: 112px;
         text-align: center;
         color: #ffffff;
         font-size: 14px;
@@ -56,3 +56,42 @@
     }
 }
 
+@media (max-width: 1200px) {
+    .promo {
+        &__wrapper {
+            margin-top: 45px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .promo {
+        &__header {
+            font-size: 40px;
+        }
+        &__subheader {
+            font-size: 20px;
+        }
+        &__icons {
+            width: 340px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .promo {
+        &__wrapper {
+            align-items: center;
+            margin-top: 0;
+        }
+        &__header {
+            text-align: center;
+        }
+        &__subheader {
+            text-align: center;
+        }
+        &__icons {
+            width: 315px;
+        }
+    }
+}

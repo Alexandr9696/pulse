@@ -19,16 +19,6 @@ $(document).ready(function(){
         touchThreshold: 5, // сколько нужно просвайпить чтобы слайд переключился
         waitForAnimate: true, // следующий клик на кнопку переключения будет срабатывать когда закончится анимация
         vertical: false, // включение вертикального слайдера
-        // responsive: [
-        //     {
-        //         breakpoints: 992,
-        //         settings: {
-        //             dots: true,
-        //             arrows: false
-        //         }
-        //     }
-        // ],
-        // в респонсе должы быть тот же набор свойств указан что и в основных стилях
         responsive: [
             {
                 breakpoint: 992,

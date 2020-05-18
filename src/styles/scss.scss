@@ -7,10 +7,19 @@
   box-sizing: border-box;
   margin: 0;
 }
+
 .container_flex {
   max-width: 950px;
   margin: 0 auto;
 }
+
+@media (max-width: 992px) {
+  .container_flex {
+    max-width: 100%;
+    margin: 0 25px;
+  }
+}
+
 @import "animate.css";
 @import "animations";
 @import "promo";

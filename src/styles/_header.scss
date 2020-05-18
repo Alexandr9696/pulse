@@ -2,8 +2,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   &__logo {
     width: 250px;
+
     img {
       width: 100%;
     }
@@ -14,24 +16,75 @@
     font-size: 12px;
     text-align: center;
     font-weight: 500;
+
     span {
       display: block;
       font-size: 18px;
     }
   }
+
   &__phone {
     display: block;
     color: #ffffff;
     font-size: 18px;
     font-weight: 700;
+    text-decoration: none;
+
     &:hover {
       color: #ffffff;
-      text-decoration: none;
     }
   }
+
   &__contacts {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header {
+    &__logo {
+      width: 200px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .header {
+    &__logo {
+      width: 180px;
+    }
+
+    &__phone {
+      font-size: 15px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    &__logo {
+      width: 152px;
+    }
+    &__official {
+      font-size: 10px;
+      span {
+        display: block;
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    flex-direction: column;
+    &__logo {
+      width: 250px;
+    }
+    &__official, &__contacts {
+      display: none;
+    }
   }
 }

@@ -64,7 +64,7 @@
   padding: 81px 0;
 
   .slider__inner {
-    width: 750px;
+    width: 721px;
     margin: 0 auto;
     position: relative;
 
@@ -91,12 +91,16 @@
 
     .slider__item {
       text-align: center;
+      img {
+        width: 100%;
+      }
     }
 
     .slick-dots {
       display: flex;
       align-items: center;
       justify-content: center;
+      padding-inline-start: 0;
       li {
         list-style: none;
         margin: 0 10px;
@@ -118,5 +122,20 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .slider {
+    .slider__inner {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .slider {
+    padding: 40px 0;
+  }
+}
+
 
 

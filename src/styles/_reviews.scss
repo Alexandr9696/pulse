@@ -39,3 +39,26 @@
     }
   }
 }
+
+@media (max-width: 576px) {
+  .reviews {
+    hr {
+      margin: 20px 0;
+    }
+    &-item {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      &__img {
+        margin-right: 0;
+      }
+      &__title {
+        margin: 20px 0 5px 0;
+      }
+      &__subtitle {
+        margin: 0px 0 10px 0;
+      }
+    }
+  }
+}

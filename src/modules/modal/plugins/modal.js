@@ -36,8 +36,6 @@ function _createModalFooter(buttons = []) {
 
 // ======= ФУНКЦИЯ СОЗДАНИЯ СТРУКТУРЫ МОДАЛЬНОГО ОКНА ======= \\
 function _createModal(options) {
-    // ширина поумолчанию
-    const DEFAULT_WIDTH = '600px';
     // создаем обертку
     const modal = document.createElement('div');
     // присваиваем класс обертке
@@ -46,7 +44,7 @@ function _createModal(options) {
     modal.insertAdjacentHTML('afterbegin', `
     <div class="modal-overlay hide animate__animated" data-close="true">
 <!--    берем значение из options (если в options значение width не опрделено то вставляем значение DEFAULT_WIDTH   -->
-        <div class="modal-window hide animate__animated" style="width: ${options.width || DEFAULT_WIDTH}">
+        <div class="modal-window hide animate__animated">
             <div class="modal-header">
 <!--    берем значение из options (если в options значение title не опрделено то вставляем значение "Окно"          -->
                 <span class="modal-title">${options.title || ''}</span>
