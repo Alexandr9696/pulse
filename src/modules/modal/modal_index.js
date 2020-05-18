@@ -51,7 +51,6 @@ document.addEventListener('click', event => {
         consultationModal.open();
     } else if (btnType === 'order') {
         const wrap = event.target.closest('.catalog-item');
-        console.log(wrap);
         const subtitle = wrap.querySelector('.catalog-item__subtitle').textContent;
         orderModal.setContent(`
         <div class="modal__subtitle">Ваш заказ:</div>
