@@ -30,11 +30,12 @@ const orderModal = $.modal({
 
 // добавляем слушателя для всей страницы
 document.addEventListener('click', event => {
-    event.preventDefault();
+    // event.preventDefault();
     // заносим в переменную [data-btn] (если есть)
     const btnType = event.target.dataset.btn;
     // если [data-btn]= price
     if (btnType === 'price') {
+        event.preventDefault();
         // добавляем контент в модальное окно
         consultationModal.setContent(`
         <div class="modal__subtitle">Просто заполните форму заявки</div>
@@ -50,6 +51,7 @@ document.addEventListener('click', event => {
         // открывем модальное окно
         consultationModal.open();
     } else if (btnType === 'order') {
+        event.preventDefault();
         const wrap = event.target.closest('.catalog-item');
         const subtitle = wrap.querySelector('.catalog-item__subtitle').textContent;
         orderModal.setContent(`
@@ -63,7 +65,6 @@ document.addEventListener('click', event => {
             <button class="button button__submit">Купить</button>
         </form>
         `);
-
         orderModal.open();
     }
 });
